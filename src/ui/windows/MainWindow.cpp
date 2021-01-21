@@ -73,6 +73,24 @@ void MainWindow::reload() {
                     Settings::settings()->remove_host(button->host());
                     reload();
                 });
+
+                alert->add_button("Force Connect (Use if already paired)", [this, button] {
+                    push<AppListWindow>(button->host().address);
+                });
+                
+                alert->add_button("Pair", [this, button] {
+                    auto loader = add<LoadingOverlay>("Pairing... (Enter 0000)");
+                    
+                    GameStreamClient::client()->pair(button->host().address, "0000", [this, loader](auto result){
+                        loader->dispose();
+                        
+                        if (result.isSuccess()) {
+                            reload();
+                        } else {
+                            screen()->add<Alert>("Error", result.error());
+                        }
+                    });
+                });
             }
         });
     }
