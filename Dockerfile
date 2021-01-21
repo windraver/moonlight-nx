@@ -9,6 +9,6 @@ RUN echo "deb http://deb.debian.org/debian stretch-backports main" >> /etc/apt/s
     apt-get -t stretch-backports -y install git fakeroot
 
 # Install devkitpro-pkgbuild-helpers
-RUN dkp-pacman -S --noconfirm devkitpro-pkgbuild-helpers
+#RUN dkp-pacman -S --noconfirm devkitpro-pkgbuild-helpers
 
 ENTRYPOINT ["/bin/bash"]
