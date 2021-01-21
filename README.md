@@ -27,9 +27,11 @@ Moonlight-NX is a port of [Moonlight Game Streaming Project](https://github.com/
 1. Build a development environment: `docker build . -t moonlight-nx-build`
 2. Run run the development environment: `docker run -it moonlight-nx-build`
 3. Clone this repo: `git clone --recursive https://github.com/rock88/moonlight-nx.git`;
-4. Set environment variables for the custom libcurl build: `export LIBCURL_PKGBUILD_URL="https://github.com/devkitPro/pacman-packages/raw/1582ad85914b14497fae32a9fe9074c0374f99f7/switch/curl/PKGBUILD"; export LIBCURL_BUILD_USER="build"`
-5. Run the build: `cd moonlight-nx; ./build.sh; exit`.
-6. Copy the .nro out of the container: `docker cp moonlight-nx-build:moonlight-nx/moonlight.nro .`
+4. get the devkitpro now that the docker container is running: dkp-pacman -S --noconfirm devkitpro-pkgbuild-helpers
+5. Set environment variables for the custom libcurl build: `export LIBCURL_PKGBUILD_URL="https://github.com/devkitPro/pacman-packages/raw/1582ad85914b14497fae32a9fe9074c0374f99f7/switch/curl/PKGBUILD"; export LIBCURL_BUILD_USER="build"`
+6. Run the build: `cd moonlight-nx; ./build.sh; exit`.
+7. Get the docker container id: docker ps -l
+8. Copy the .nro out of the container: `docker cp moonlight-nx-build:moonlight-nx/moonlight.nro .`
 
 # Assets
 Icon - [moonlight-stream](https://github.com/moonlight-stream "moonlight-stream") project logo.
