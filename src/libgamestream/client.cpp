@@ -34,7 +34,7 @@
 #define CHANNEL_MASK_STEREO 0x3
 #define CHANNEL_MASK_51_SURROUND 0xFC
 
-static char* unique_id = "0123456789ABCDEF";
+static char* unique_id = "3c2b9dc9-7fbc-49b6-a021-a06094739a65";
 
 static int load_server_status(PSERVER_DATA server) {
     int ret;
