@@ -60,7 +60,7 @@ static int load_server_status(PSERVER_DATA server) {
         
         Data data;
         
-        if (http_request(url, &data, HTTPRequestTimeoutLow) != GS_OK) {
+        if (http_request(url, &data, HTTPRequestTimeoutMedium) != GS_OK) {
             ret = GS_IO_ERROR;
             goto cleanup;
         }
@@ -167,7 +167,7 @@ int gs_unpair(PSERVER_DATA server) {
     Data data;
     
     snprintf(url, sizeof(url), "http://%s:47989/unpair?uniqueid=%s", server->serverInfo.address, unique_id);
-    ret = http_request(url, &data, HTTPRequestTimeoutLow);
+    ret = http_request(url, &data, HTTPRequestTimeoutMedium);
     return ret;
 }
 
