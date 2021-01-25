@@ -73,6 +73,10 @@ void MainWindow::reload() {
                     Settings::settings()->remove_host(button->host());
                     reload();
                 });
+
+                alert->add_button("Force Connect (Use if already paired)", [this, button] {
+                    push<AppListWindow>(button->host().address);
+                });
                 
                 alert->add_button("Pair", [this, button] {
                     auto loader = add<LoadingOverlay>("Pairing... (Enter 0000)");
