@@ -40,13 +40,13 @@ Setup the environment:
 4. Build a development environment: `docker build . -t moonlight-nx-build`
 
 Now that the environment is setup, the following steps are to build:
-5. Run run the development environment: `docker run -it moonlight-nx-build`
-6. Clone this repo: `git clone --recursive https://github.com/windraver/moonlight-nx.git`;
-7. get the devkitpro now that the docker container is running: `dkp-pacman -S --noconfirm devkitpro-pkgbuild-helpers`
-8. Set environment variables for the custom libcurl build: `export LIBCURL_PKGBUILD_URL="https://github.com/devkitPro/pacman-packages/raw/1582ad85914b14497fae32a9fe9074c0374f99f7/switch/curl/PKGBUILD"; export LIBCURL_BUILD_USER="build"`
-9. Run the build: `cd moonlight-nx; ./build.sh; exit`.
-10. Get the docker container id: `docker ps -l`
-11. Copy the .nro out of the container: `docker cp moonlight-nx-build:moonlight-nx/moonlight.nro .`
+1. Run run the development environment: `docker run -it moonlight-nx-build`
+2. Clone this repo: `git clone --recursive https://github.com/windraver/moonlight-nx.git`;
+3. get the devkitpro now that the docker container is running: `dkp-pacman -S --noconfirm devkitpro-pkgbuild-helpers`
+4. Set environment variables for the custom libcurl build: `export LIBCURL_PKGBUILD_URL="https://github.com/devkitPro/pacman-packages/raw/1582ad85914b14497fae32a9fe9074c0374f99f7/switch/curl/PKGBUILD"; export LIBCURL_BUILD_USER="build"`
+5. Run the build: `cd moonlight-nx; ./build.sh; exit`.
+6. Get the docker container id: `docker ps -l`
+7. Copy the .nro out of the container: `docker cp moonlight-nx-build:moonlight-nx/moonlight.nro .`
 
 # Assets
 Icon - [moonlight-stream](https://github.com/moonlight-stream "moonlight-stream") project logo.
