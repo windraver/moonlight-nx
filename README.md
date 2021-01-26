@@ -2,6 +2,8 @@
 
 # Moonlight-NX
 
+This is not mine. I forked this from https://github.com/rock88/moonlight-nx/ in order to get it to work for me.
+
 Moonlight-NX is a port of [Moonlight Game Streaming Project](https://github.com/moonlight-stream "Moonlight Game Streaming Project") for Nintendo Switch.
 
 # Installing
@@ -24,14 +26,27 @@ Moonlight-NX is a port of [Moonlight Game Streaming Project](https://github.com/
 11. Minus+Plus - Guide button;
 
 # Build Moonlight-NX
-1. Build a development environment: `docker build . -t moonlight-nx-build`
-2. Run run the development environment: `docker run -it moonlight-nx-build`
+Windows Requirements:
+Windows X
+Docker Desktop: https://www.docker.com/products/docker-desktop
+Git: https://git-scm.com/downloads
+DevKitPro: https://devkitpro.org/wiki/Getting_Started
+
+Setup the environment:
+1. Install the requirements above.
+2. Open Windows Powershell (can be found in windows start menu)
 3. Clone this repo: `git clone --recursive https://github.com/windraver/moonlight-nx.git`;
-4. get the devkitpro now that the docker container is running: `dkp-pacman -S --noconfirm devkitpro-pkgbuild-helpers`
-5. Set environment variables for the custom libcurl build: `export LIBCURL_PKGBUILD_URL="https://github.com/devkitPro/pacman-packages/raw/1582ad85914b14497fae32a9fe9074c0374f99f7/switch/curl/PKGBUILD"; export LIBCURL_BUILD_USER="build"`
-6. Run the build: `cd moonlight-nx; ./build.sh; exit`.
-7. Get the docker container id: `docker ps -l`
-8. Copy the .nro out of the container: `docker cp moonlight-nx-build:moonlight-nx/moonlight.nro .`
+3. Enter the repo `cd moonlight-nx`
+4. Build a development environment: `docker build . -t moonlight-nx-build`
+
+Now that the environment is setup, the following steps are to build:
+5. Run run the development environment: `docker run -it moonlight-nx-build`
+6. Clone this repo: `git clone --recursive https://github.com/windraver/moonlight-nx.git`;
+7. get the devkitpro now that the docker container is running: `dkp-pacman -S --noconfirm devkitpro-pkgbuild-helpers`
+8. Set environment variables for the custom libcurl build: `export LIBCURL_PKGBUILD_URL="https://github.com/devkitPro/pacman-packages/raw/1582ad85914b14497fae32a9fe9074c0374f99f7/switch/curl/PKGBUILD"; export LIBCURL_BUILD_USER="build"`
+9. Run the build: `cd moonlight-nx; ./build.sh; exit`.
+10. Get the docker container id: `docker ps -l`
+11. Copy the .nro out of the container: `docker cp moonlight-nx-build:moonlight-nx/moonlight.nro .`
 
 # Assets
 Icon - [moonlight-stream](https://github.com/moonlight-stream "moonlight-stream") project logo.
